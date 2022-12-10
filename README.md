@@ -6,3 +6,4 @@ This repo store some practice with SQLite & Py
 > sqlite3 a buit-in py module part of the py standard library
 - https://www.sqlite.org/index.html
 - https://peps.python.org/pep-0249/
+- https://sqlitebrowser.org/dl/
