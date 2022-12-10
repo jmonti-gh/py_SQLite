@@ -16,7 +16,7 @@ c.execute(''' CREATE TABLE IF NOT EXISTS tasks (
     priority INTEGER NOT NULL
 );''')
 
-# INSERT INTO statement must be commited 
+# INSERT INTO statement must be commited - insert only one row 
 c.execute('INSERT INTO tasks(name, priority) VALUES(?,?)',
 ('My first task', 1))
 conn.commit()
@@ -29,6 +29,7 @@ ltasks = [
 ]
 c.executemany('INSERT INTO tasks(name, priority) VALUES(?,?)', ltasks)
 conn.commit()
+# [ Reminds me map() funct.: itr = map(lambda n: n * n, [1,2,3]) ]
 
 # To close connection w/DB
 conn.close()
