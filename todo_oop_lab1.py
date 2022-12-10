@@ -44,9 +44,9 @@ class Todo:
         pass
 
     def show_tasks(self):
-        print('{:>4} {:>8} {:>12}'.format('id', 'task', 'priority'))
+        print('{:>4}   {:<25} {:<12}'.format('id', 'task', 'priority'))
         for row in self.c.execute('SELECT * FROM tasks'):
-            print('{:>4} {:>8} {:>12}'.format(row[0], row[1], row[2]))
+            print('{:>4}   {:<25} {:>4}'.format(row[0], row[1], row[2]))
 
 
 app = Todo()
