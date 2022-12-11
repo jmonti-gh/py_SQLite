@@ -27,5 +27,17 @@ ltasks = [
 c.executemany('INSERT INTO tasks(name, priority) VALUES(?,?)', ltasks)
 conn.commit()
 
+# modifing DB data - change priority task 1 (UPDATE) - must commit
+c.execute('UPDATE tasks SET priority = ? WHERE id = ?', (20, 1))
+conn.commit()
+
+# deleting data - DELETE
+c.execute('DELETE FROM tasks WHERE id = ?', (1,))
+conn.commt()
+
+# read the DB data - Cursor Obj. w/aprop. SELECT is an itarator
+for row in c.execute('SELECT * FROM tasks'):
+    print(row)
+
 # To close connection w/DB
 conn.close()

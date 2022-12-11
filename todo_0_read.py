@@ -6,7 +6,7 @@ conn = sqlite3.connect('DB_files/todo_0.db')
 # Create Cursor Obj that allows execute SQL statments in the DB
 c = conn.cursor()
 
-# Cursor Obj. w/SELECT is treated as iterator
+# Cursor Obj. w/apropiate SELECT is treated as iterator
 for row in c.execute('SELECT * FROM tasks'):    # note: NO ";"
     print(row)                                  # row in form of a tuple
 # [ jm > reminds me file handle Obj.: for ln in open('file', 'r') ]
@@ -37,6 +37,13 @@ row = c.fetchone()
 print(row)
 row = c.fetchone()
 print(row)
+
+# let´s see only one column
+print()
+v = c.execute('SELECT priority FROM tasks WHERE id = ?', (2,))
+print(v)
+val = c.fetchone()
+print(val)
 
 # To close connection w/DB
 conn.close()
