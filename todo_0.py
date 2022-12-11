@@ -1,5 +1,7 @@
 import sqlite3
 
+### Real TODO, sqlite3 w JOINS + other DBMS likw psql or mysql or ...
+
 # Connection Obj is created vi connect method
 conn = sqlite3.connect('DB_files/todo_0.db')
 
